@@ -1,0 +1,9 @@
+target/
+.idea/
+.vscode/
+*.iml
+*.log
+
+# Don't commit local credentials override
+src/main/resources/application-local.yml
+.env
