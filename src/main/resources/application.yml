@@ -1,20 +1,17 @@
-spring:
-  application:
-    name: library
-  
++spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
-  
+
   jpa:
     hibernate:
-      ddl-auto: validate
-    open-in-view: false
-    show-sql: false
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
 
-logging:
-  level:
-    root: INFO
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: ${PORT:8080}
